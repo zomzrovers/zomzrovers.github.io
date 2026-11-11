@@ -233,8 +233,12 @@ h2.big .it{color:var(--blue)}
 .contact h2{font-size:clamp(48px,9vw,128px);line-height:.92;letter-spacing:-.05em;font-weight:700}
 .contact h2 .it{color:var(--lime)}
 .contact .sub{color:#bdb9ae}
-.clinks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
-@media(max-width:900px){.clinks{grid-template-columns:1fr 1fr}}
+.clinks{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:56px}
+.cl.cv{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.cl.cv:hover{background:var(--paper)}
+nav .cvlink{font-size:13.5px;color:#f3f0e8;text-decoration:none;padding:7px 12px;border-radius:999px;border:1px solid #444;margin-right:-10px}
+nav .cvlink:hover{border-color:var(--lime);color:var(--lime)}
+@media(max-width:1000px){.clinks{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.clinks{grid-template-columns:1fr}}
 .cl{border:1.5px solid #3a3a37;border-radius:18px;padding:22px;text-decoration:none;transition:.25s;display:block}
 .cl:hover{background:var(--lime);color:var(--ink);border-color:var(--lime);transform:translateY(-4px)}
@@ -263,6 +267,7 @@ h2.big .it{color:var(--blue)}
     <li><a href="#hackathons">hackathons</a></li>
     <li><a href="#off">off-screen</a></li>
   </ul>
+  <a class="cvlink" href="resume.pdf" target="_blank" rel="noopener">résumé ↗</a>
   <a class="hire" href="#contact">say hi →</a>
 </nav>
 
@@ -292,6 +297,7 @@ h2.big .it{color:var(--blue)}
   <div class="rot">I'm a <b id="role">full-stack developer</b><span class="cur"></span><br>who studies Mechanical Engineering at IIT Kanpur.</div>
   <div class="row">
     <a class="btn dark" href="#build">See my work ↓</a>
+    <a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF) ↗</a>
     <a class="btn ghost" href="#contact">Get in touch</a>
     <span class="avail">● open to frontend / SDE roles</span>
   </div>
@@ -554,12 +560,13 @@ h2.big .it{color:var(--blue)}
 <footer class="contact" id="contact"><div class="wrap">
   <div class="eyebrow" style="color:var(--lime)">contact</div>
   <h2>Let's build<br>something <span class="it">good</span>.</h2>
-  <p class="sub">The fastest way to reach me is email or a call. I usually reply the same day.</p>
+  <p class="sub">The fastest way to reach me is email or a call. I usually reply the same day. If you just want the one-pager, the résumé is right there too.</p>
   <div class="clinks">
     <a class="cl" href="mailto:aryavart23@iitk.ac.in"><div class="k">email</div><b>aryavart23@iitk.ac.in</b></a>
     <a class="cl" href="tel:+918950391967"><div class="k">phone</div><b>+91 89503 91967</b></a>
     <a class="cl" href="https://www.linkedin.com/in/zomzrovers" target="_blank" rel="noopener"><div class="k">linkedin</div><b>in/zomzrovers ↗</b></a>
     <a class="cl" href="https://github.com/zomzrovers" target="_blank" rel="noopener"><div class="k">github</div><b>zomzrovers ↗</b></a>
+    <a class="cl cv" href="resume.pdf" target="_blank" rel="noopener"><div class="k">résumé</div><b>Download PDF ↓</b></a>
   </div>
   <div class="foot"><span>© 2026 Aryavart Dahiya · IIT Kanpur</span><span>built by hand · no templates</span></div>
 </div></footer>
