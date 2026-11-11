@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aryavart Dahiya</title>
+<meta name="description" content="Aryavart Dahiya. Final-year at IIT Kanpur. I build full-stack products, fast backends, and the occasional ML model.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1115; --bg2:#151821; --card:#181c26; --line:#262b38;
+  --ink:#e9e6df; --mute:#9a9caa; --dim:#6b6e7c;
+  --acc:#e8b04a; --acc2:#5fb3a1; --red:#e46a5a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+::selection{background:var(--acc);color:#111}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.mono{font-family:"JetBrains Mono",monospace}
+.serif{font-family:Fraunces,Georgia,serif}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+nav .logo{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:14px;text-decoration:none}
+nav .logo span{color:var(--acc)}
+nav ul{display:flex;gap:22px;list-style:none}
+nav ul a{font-size:13.5px;color:var(--mute);text-decoration:none;transition:color .2s}
+nav ul a:hover{color:var(--ink)}
+@media(max-width:720px){nav ul{display:none}}
+
+/* hero */
+.hero{padding:96px 0 72px;position:relative;overflow:hidden}
+.hero .tag{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--acc2);margin-bottom:18px}
+.hero .tag::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--acc2);margin-right:10px;box-shadow:0 0 0 4px rgba(95,179,161,.18);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(95,179,161,0)}}
+.hero h1{font-family:Fraunces,serif;font-weight:800;font-size:clamp(44px,8vw,88px);line-height:1;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--acc)}
+.hero p.lead{max-width:640px;margin-top:26px;font-size:clamp(17px,2vw,19px);color:#c9c6bf}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid var(--line);background:var(--card);transition:transform .15s,border-color .2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--acc)}
+.btn.primary{background:var(--acc);color:#16130c;border-color:var(--acc)}
+.term{margin-top:56px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;max-width:560px;font-family:"JetBrains Mono",monospace;font-size:13px;overflow:hidden}
+.term .bar{display:flex;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.term .bar i{width:10px;height:10px;border-radius:50%;background:#3a3f4d}
+.term .body{padding:16px 18px;color:var(--mute)}
+.term .body b{color:var(--acc2);font-weight:400}
+.term .body .v{color:var(--ink)}
+
+section{padding:84px 0;border-top:1px solid var(--line)}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:36px}
+.sh .n{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--acc)}
+.sh h2{font-family:Fraunces,serif;font-size:clamp(30px,4vw,42px);font-weight:600;letter-spacing:-.01em}
+.prose p{color:#cfccc5;max-width:720px;margin-bottom:16px}
+.prose p strong{color:var(--ink)}
+
+/* about grid */
+.about{display:grid;grid-template-columns:1.5fr 1fr;gap:48px}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+.facts{display:grid;gap:12px;align-content:start}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.fact .k{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+.fact .v{font-size:15px;margin-top:2px}
+.fact .v b{font-family:Fraunces,serif;font-size:26px;color:var(--acc);font-weight:600;margin-right:6px}
+
+/* timeline */
+.tl{position:relative;padding-left:28px}
+.tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.item{position:relative;margin-bottom:44px}
+.item::before{content:"";position:absolute;left:-28px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--acc)}
+.item .when{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--dim)}
+.item h3{font-size:20px;font-weight:600;margin:2px 0}
+.item h3 span{color:var(--mute);font-weight:400}
+.item .badge{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:11px;padding:2px 8px;border-radius:20px;background:rgba(95,179,161,.14);color:var(--acc2);margin-left:6px;vertical-align:middle}
+.item p{color:#c4c1ba;max-width:720px;margin-top:8px}
+
+/* projects */
+.feature{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:28px}
+.feature .top{padding:30px 32px 6px}
+.feature .top .kicker{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--acc2)}
+.feature h3{font-family:Fraunces,serif;font-size:32px;font-weight:600;margin:4px 0 10px}
+.feature p{color:#c9c6bf;max-width:760px;margin-bottom:12px}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 4px}
+.stack span{font-family:"JetBrains Mono",monospace;font-size:11.5px;padding:3px 9px;border-radius:5px;background:#20253200;border:1px solid var(--line);color:var(--mute)}
+.shots{display:flex;gap:14px;overflow-x:auto;padding:22px 32px 30px;scroll-snap-type:x mandatory}
+.shots figure{flex:0 0 min(78%,520px);scroll-snap-align:start}
+.shots img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;cursor:zoom-in;transition:transform .25s}
+.shots img:hover{transform:scale(1.015)}
+.shots figcaption{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--dim);margin-top:8px}
+.feature .links{padding:0 32px 26px;display:flex;gap:16px}
+.feature .links a{font-size:14px;color:var(--acc);text-decoration:none}
+.feature .links a:hover{text-decoration:underline}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 22px 18px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;text-decoration:none}
+.card:hover{border-color:#3d4456;transform:translateY(-3px)}
+.card .kicker{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--dim)}
+.card h4{font-size:18px;margin:4px 0 8px}
+.card p{font-size:14.5px;color:#bbb8b1;flex:1}
+.card .stack{margin-top:14px}
+
+/* side quests */
+.quests{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.quest{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px}
+.quest .ic{font-family:Fraunces,serif;font-size:13px;color:var(--acc);letter-spacing:.12em;text-transform:uppercase}
+.quest h3{font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:6px 0 12px}
+.quest p{font-size:15px;color:#c4c1ba;margin-bottom:10px}
+.quest ul{list-style:none;margin-top:12px}
+.quest li{font-size:14.5px;color:#c4c1ba;padding:6px 0 6px 18px;position:relative;border-top:1px dashed var(--line)}
+.quest li::before{content:"→";position:absolute;left:0;color:var(--acc2)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.skills div h5{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--acc);font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em}
+.skills div p{color:#c4c1ba;font-size:15px}
+
+.contact{text-align:left}
+.contact h2.big{font-family:Fraunces,serif;font-size:clamp(36px,6vw,64px);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.contact h2.big em{color:var(--acc);font-weight:400}
+.contact .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+footer{padding:30px 0 40px;border-top:1px solid var(--line);font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--dim)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:50;padding:24px;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:100%;border-radius:10px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}*{animation:none!important}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="#" class="logo">aryavart<span>.</span>dahiya</a>
+  <ul>
+    <li><a href="#about">about</a></li>
+    <li><a href="#work">work</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#amex">amex</a></li>
+    <li><a href="#off-screen">off-screen</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="tag">final year · IIT Kanpur · open to good problems</div>
+  <h1>Aryavart<br>Dahiya<em>.</em></h1>
+  <p class="lead">Mechanical engineer on paper, software person in practice. I like building things people actually click on, and then making the boring part underneath them fast enough that nobody notices it exists.</p>
+  <div class="cta">
+    <a class="btn primary" href="#projects">See what I've built</a>
+    <a class="btn" href="https://github.com/zomzrovers" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/zomzrovers" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="mailto:aryavart23@iitk.ac.in">Email</a>
+  </div>
+  <div class="term">
+    <div class="bar"><i></i><i></i><i></i></div>
+    <div class="body">
+      <div><b>$</b> whoami</div>
+      <div class="v">aryavart · B.Tech ME '27 · IIT Kanpur</div>
+      <div style="margin-top:8px"><b>$</b> cat currently.txt</div>
+      <div class="v">returning to Deutsche Bank (PPO) · polishing side projects</div>
+      <div style="margin-top:8px"><b>$</b> codeforces --rating</div>
+      <div class="v">1665 · Expert</div>
+    </div>
+  </div>
+</div></header>
+
+<section id="about"><div class="wrap">
+  <div class="sh"><span class="n">01</span><h2>About</h2></div>
+  <div class="about">
+    <div class="prose reveal">
+      <p>I came to IIT Kanpur for Mechanical Engineering and ended up spending more time in terminals than in workshops. Somewhere along the way, after enough Codeforces rounds and course projects, writing software stopped being a side thing.</p>
+      <p>These days I mostly build <strong>full-stack products</strong>, React on the front, Node or Spring Boot behind it, with a soft spot for <strong>systems work</strong> in C++ when I want to feel things break at a lower level. I've shipped to production at Deutsche Bank, led a nine-person team on a campus platform, and spent a very sleepless few weeks building a policy engine for AI agents for the Amex hackathon.</p>
+      <p>Outside code, I ran the English Literary Society for a year, sit on my department's undergraduate committee, and have been playing competitive badminton since school.</p>
+    </div>
+    <div class="facts reveal">
+      <div class="fact"><div class="k">Codeforces</div><div class="v"><b>1665</b>Expert</div></div>
+      <div class="fact"><div class="k">Amex CodeStreet '26</div><div class="v"><b>Top 6</b>of 15,000+ teams</div></div>
+      <div class="fact"><div class="k">Deutsche Bank</div><div class="v"><b>PPO</b>after summer '26</div></div>
+      <div class="fact"><div class="k">KVPY</div><div class="v"><b>AIR 1638</b>Extended Fellowship</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="sh"><span class="n">02</span><h2>Where I've worked</h2></div>
+  <div class="tl">
+    <div class="item reveal">
+      <div class="when">May 2026 – Jul 2026</div>
+      <h3>Deutsche Bank <span>· Software Developer Intern</span><span class="badge">received PPO</span></h3>
+      <p>I owned <strong>CSTM</strong> end to end, a Spring Boot + React platform that replaced a legacy mapping system, and took it all the way to production. A lot of the job was sitting with business analysts, figuring out what they actually needed, and turning that into screens and APIs that made sense to them.</p>
+      <p>The part I'm proudest of: wiring in DBLLM, an internal LLM service, so people could generate PySpark/Java Spark transformation code from mapping rules in one click. The first version took over a minute per request and made things up. After restructuring the inputs and the prompts, it came down to under 20 seconds and became far more reliable. I also built feed cloning and bulk ingestion so teams could manage thousands of mapping feeds without doing it by hand.</p>
+    </div>
+    <div class="item reveal">
+      <div class="when">Dec 2024 – Feb 2025</div>
+      <h3>DataPKT Aviation <span>· Data Engineer Intern</span></h3>
+      <p>Drone telemetry, lots of it. I wrote Python + SQL pipelines over 10M+ records and built an XGBoost model for predictive maintenance across five aircraft subsystems (95.2% accuracy), kept interpretable on purpose because engineers have to trust why it flags something.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="sh"><span class="n">03</span><h2>Things I've built</h2></div>
+
+  <div class="feature reveal">
+    <div class="top">
+      <div class="kicker">flagship · team lead · Jan – Apr 2026</div>
+      <h3>Patang</h3>
+      <p>IIT Kanpur's sports facilities ran on a mix of registers, Google Forms and people knowing people. Patang is one platform for all of it: booking a badminton court, registering for the gym or pool, getting a QR pass, and letting caretakers verify entries at the door.</p>
+      <p>I led a team of nine on this as our Software Dev &amp; Ops course project. We ended up with six user roles (students, caretakers, captains, coordinators, executives, facility admins), each with its own dashboard, plus RBAC, OAuth 2.0 + JWT auth, real-time slot booking with fair-use checks, and CI/CD through GitHub Actions.</p>
+      <div class="stack"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>OAuth 2.0</span><span>JWT</span><span>GitHub Actions</span></div>
+    </div>
+    <div class="shots">
+      <figure><img src="patang0.jpg" alt="Patang student dashboard showing active gym subscription and upcoming bookings" loading="lazy" onerror="this.closest('figure').style.display='none'"><figcaption>student dashboard · bookings + digital entry pass</figcaption></figure>
+      <figure><img src="patang1.jpg" alt="Patang gym subscription registration form" loading="lazy" onerror="this.closest('figure').style.display='none'"><figcaption>gym subscription flow</figcaption></figure>
+      <figure><img src="patang3.jpg" alt="Patang gym admin dashboard with registration requests and QR verification" loading="lazy" onerror="this.closest('figure').style.display='none'"><figcaption>gym admin · approvals + QR entry check</figcaption></figure>
+      <figure><img src="patang9.jpg" alt="Patang coordinator access management screen" loading="lazy" onerror="this.closest('figure').style.display='none'"><figcaption>executive · coordinator access management</figcaption></figure>
+    </div>
+    <div class="links"><a href="https://github.com/zomzrovers/Patang" target="_blank" rel="noopener">Code on GitHub →</a></div>
+  </div>
+
+  <div class="grid">
+    <a class="card reveal" href="https://github.com/zomzrovers/kv-store" target="_blank" rel="noopener">
+      <div class="kicker">self project · C++</div>
+      <h4>Distributed key-value store</h4>
+      <p>A Redis-inspired store written from scratch. Multithreaded TCP server, LRU eviction, append-only persistence, async replication, and a Redis-compatible protocol. Benchmarks at 100K+ ops/sec with sub-millisecond lookups.</p>
+      <div class="stack"><span>C++</span><span>TCP</span><span>concurrency</span></div>
+    </a>
+    <a class="card reveal" href="https://github.com/zomzrovers/FinSplit" target="_blank" rel="noopener">
+      <div class="kicker">full-stack · React</div>
+      <h4>FinSplit</h4>
+      <p>An expense and income tracker with auth, dashboards and per-user records. Small, but it's where I first learned to build a React app and its API together instead of one at a time.</p>
+      <div class="stack"><span>React</span><span>Vite</span><span>Express</span><span>MongoDB</span></div>
+    </a>
+    <a class="card reveal" href="https://github.com/zomzrovers/file-indexer" target="_blank" rel="noopener">
+      <div class="kicker">CS253 · C++</div>
+      <h4>File indexing engine</h4>
+      <p>A memory-conscious CLI that indexes 110MB+ versioned files in chunks. Word counts, diffs between versions and top-K queries, using hash indices and O(N log K) partial sorting.</p>
+      <div class="stack"><span>C++</span><span>templates</span><span>chunked I/O</span></div>
+    </a>
+    <a class="card reveal" href="https://github.com/zomzrovers/arbiterpuf" target="_blank" rel="noopener">
+      <div class="kicker">ML course project</div>
+      <h4>Breaking an Arbiter PUF</h4>
+      <p>PUFs are supposed to be unclonable. We showed a linear model can predict this one at 99.3% accuracy after expanding 32 features into 528, training in about 2 seconds.</p>
+      <div class="stack"><span>Python</span><span>scikit-learn</span></div>
+    </a>
+    <a class="card reveal" href="https://github.com/zomzrovers/lesion-restoration" target="_blank" rel="noopener">
+      <div class="kicker">CV &amp; deep learning</div>
+      <h4>Facial lesion inpainting</h4>
+      <p>Finds acne and lesions using 71-point facial landmarks and paints them out with a two-stage pipeline: Telea inpainting followed by a Deep Image Prior U-Net.</p>
+      <div class="stack"><span>PyTorch</span><span>OpenCV</span><span>Dlib</span></div>
+    </a>
+    <a class="card reveal" href="https://github.com/zomzrovers/AutoTextGen" target="_blank" rel="noopener">
+      <div class="kicker">self project · PyTorch</div>
+      <h4>AutoTextGen</h4>
+      <p>Character-level language models, from bigrams through MLPs, RNNs and LSTMs to a small Transformer, all trained on the same data so you can watch each one get less wrong.</p>
+      <div class="stack"><span>PyTorch</span><span>NLP</span></div>
+    </a>
+  </div>
+</div></section>
+
+<section id="amex"><div class="wrap">
+  <div class="sh"><span class="n">04</span><h2>Amex CodeStreet '26</h2></div>
+  <div class="feature reveal" style="margin-bottom:0">
+    <div class="top" style="padding-bottom:30px">
+      <div class="kicker">national finalist · top 6 of 15,000+ teams · Jul – Aug 2026</div>
+      <h3>A governance layer for AI agents</h3>
+      <p>The question we picked was simple to state and annoying to solve: if you let AI agents spend money and call tools on your behalf, what stops one of them from going rogue?</p>
+      <p>Our answer was a <strong>fail-closed policy engine</strong> sitting between the agents and everything they touch. Every action is checked against least-privilege permissions, separation of duties, and spend and velocity limits. If the engine is unsure, the answer is no. Decisions take about 0.7 ms at p50.</p>
+      <p>The hardest bug was double spending. With many agents firing in parallel, two of them could both pass a budget check before either one was recorded. We moved state to SQLite in WAL mode with atomic cap decrements and hammered it until it held at roughly 1,700 decisions a second with zero double spends. After that came Ed25519 request signing so an agent can't pretend to be another one, replay protection and key rotation, a tamper-evident audit log, and a kill switch. We tested it against five classes of rogue-agent behaviour with 149 tests.</p>
+      <p>Getting the finalist call was one of the better moments of the year. Out of 15,000+ teams, we were one of six.</p>
+      <div class="stack"><span>Python</span><span>FastAPI</span><span>WebSockets</span><span>SQLite WAL</span><span>Ed25519</span></div>
+    </div>
+    <div class="links"><a href="https://github.com/zomzrovers/governance-layer-for-ai-agents" target="_blank" rel="noopener">Code on GitHub →</a></div>
+  </div>
+</div></section>
+
+<section id="off-screen"><div class="wrap">
+  <div class="sh"><span class="n">05</span><h2>Off-screen</h2></div>
+  <div class="quests">
+    <div class="quest reveal">
+      <div class="ic">Apr 2025 – Apr 2026</div>
+      <h3>English Literary Society</h3>
+      <p>I spent a year as Coordinator of ELS, IIT Kanpur's literary club. That meant a two-tier team of 29 people, a budget of ₹1 lakh, and a lot of convincing engineers that a poetry evening was worth skipping a lab report for.</p>
+      <ul>
+        <li>Started Writers' Guild, a new subsection with weekly sessions, which grew to 120+ members</li>
+        <li>Led our 17-member contingent across 6 events at Inter-IIT Cultural Meet 8.0</li>
+        <li>Brought Scrabble Leagues back to campus with 80+ players</li>
+        <li>Ran campus open-mics and JAM events with the Dean of Student Affairs office and the Music Club</li>
+        <li>Curated Campus Stories, where we interviewed alumni and turned it into a farewell montage for the club</li>
+      </ul>
+    </div>
+    <div class="quest reveal">
+      <div class="ic">Sep 2025 – present</div>
+      <h3>Student Senate nominee, DUGC</h3>
+      <p>I represent 800+ Mechanical undergrads on the Department Undergraduate Committee, alongside six senior faculty, the Convenor and the HoD. It's the least glamorous thing I do and probably the one that matters most to people.</p>
+      <ul>
+        <li>Pushed through semester-long internships, relaxed credit caps and course waivers</li>
+        <li>Mediated cases that kept 8 students from termination</li>
+        <li>Helped 40+ students with backlogs graduate on time through academic roadmaps and mentors</li>
+      </ul>
+    </div>
+    <div class="quest reveal">
+      <div class="ic">since 2017</div>
+      <h3>Badminton</h3>
+      <p>I've been on a court since school, and it's still how I switch off. It also made Patang personal: booking a court on campus should take one tap, not a queue and a register.</p>
+      <ul>
+        <li>School Badminton Championship, State: gold, twice (2017, 2018)</li>
+        <li>Leapstart Badminton Tournament, National: bronze (2018)</li>
+        <li>Fresher's Inferno at IITK: gold and Best Player (2023)</li>
+        <li>Intra Badminton League Tournament, National: silver (2025)</li>
+      </ul>
+    </div>
+    <div class="quest reveal">
+      <div class="ic">around campus</div>
+      <h3>Sports Council &amp; Orientation</h3>
+      <p>I ran the Media &amp; Publicity vertical of the Sports Council and grew its Instagram to 4.5K+ followers. Before that, as a Student Guide, I helped plan the 10-day Orientation'24 for 1,200+ freshmen and mentored six of them through first year.</p>
+    </div>
+    <div class="quest reveal">
+      <div class="ic">giving back</div>
+      <h3>Social impact</h3>
+      <ul>
+        <li>Ran e-waste awareness and plantation drives across 50+ rural schools in Haryana with Lehar NGO</li>
+        <li>Helped feed and care for 30+ stray animals with Kshitiksha Foundation</li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="sh"><span class="n">06</span><h2>Toolbox</h2></div>
+  <div class="skills reveal">
+    <div><h5>Frontend</h5><p>React · Next.js · JavaScript · HTML · CSS</p></div>
+    <div><h5>Backend</h5><p>Node.js · Express · Spring Boot · FastAPI · REST · WebSockets</p></div>
+    <div><h5>Data</h5><p>MongoDB · PostgreSQL · SQL · PySpark</p></div>
+    <div><h5>Languages</h5><p>C++ · Java · Python · C · Bash</p></div>
+    <div><h5>Ops &amp; auth</h5><p>Docker · Git · GitHub Actions · OAuth 2.0 · JWT</p></div>
+    <div><h5>ML</h5><p>PyTorch · scikit-learn · XGBoost · OpenCV</p></div>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <div class="sh"><span class="n">07</span><h2>Contact</h2></div>
+  <h2 class="big reveal">Building something people use?<br><em>I'd like to hear about it.</em></h2>
+  <div class="row reveal">
+    <a class="btn primary" href="mailto:aryavart23@iitk.ac.in">aryavart23@iitk.ac.in</a>
+    <a class="btn" href="https://www.linkedin.com/in/zomzrovers" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/zomzrovers" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 Aryavart Dahiya</span>
+  <span>handwritten HTML &amp; CSS · no frameworks were harmed</span>
+</div></footer>
+
+<div id="lb"><img alt=""></div>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+document.querySelectorAll('.shots img').forEach(i=>i.addEventListener('click',()=>{lbi.src=i.src;lbi.alt=i.alt;lb.classList.add('on')}));
+lb.addEventListener('click',()=>lb.classList.remove('on'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+</script>
+</body>
+</html>
